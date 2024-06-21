@@ -8,7 +8,7 @@ The `Contractship` is a simple smart contract built with Solidity that manages o
 - **Owner Verification**: Provides three different methods to verify if the caller is the owner:
   - `Owner()`: Uses `require` to check if the caller is the owner.
   - `NotOnwer()`: Uses `revert` to check if the caller is the owner.
-  - `Owner()`: Uses `assert` to check if the caller is the owner.
+  - `Sender()`: Uses `assert` to check if the caller is the owner.
 
 ## Functions
 
@@ -18,19 +18,19 @@ constructor() {
 }
 //Sets the owner to the address that deploys the contract.
 
-function onlyOwner() public view {
+function Owner() public view {
     require(msg.sender == owner, "Only the owner can call this function.");
 }
 //Checks if the caller is the owner using require. If not, it throws an error with the message "Only the owner can call this function."
 
-function onwerHere() public view {
+function NotOnwer() public view {
     if(msg.sender != owner) {
         revert("The caller is not the owner.");
     }
 }
 //Checks if the caller is the owner using revert. If not, it reverts the transaction with the message "The caller is not the owner."
 
-function Owner() public view {
+function Sender() public view {
     assert(msg.sender == owner);
 }
 //Checks if the caller is the owner using assert. If not, it causes the transaction to fail.
