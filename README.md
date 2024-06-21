@@ -1,13 +1,13 @@
-# OwnershipContract
+# Contractship
 
 ## Overview
-The `OwnershipContract` is a simple smart contract built with Solidity that manages ownership of the contract. The contract is designed to restrict access to certain functions, ensuring that only the owner can execute them. This contract is a basic example of implementing ownership and access control in a smart contract.
+The `Contractship` is a simple smart contract built with Solidity that manages ownership of the contract. The contract is designed to restrict access to certain functions, ensuring that only the owner can execute them. This contract is a basic example of implementing ownership and access control in a smart contract.
 
 ## Features
 - **Owner Initialization**: The contract initializes the owner as the address that deploys the contract.
 - **Owner Verification**: Provides three different methods to verify if the caller is the owner:
-  - `onlyOwner()`: Uses `require` to check if the caller is the owner.
-  - `onwerHere()`: Uses `revert` to check if the caller is the owner.
+  - `Owner()`: Uses `require` to check if the caller is the owner.
+  - `NotOnwer()`: Uses `revert` to check if the caller is the owner.
   - `Owner()`: Uses `assert` to check if the caller is the owner.
 
 ## Functions
