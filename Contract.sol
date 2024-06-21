@@ -8,17 +8,17 @@ contract OwnershipContract {
         owner = msg.sender;
     }
 
-    function onlyOwner() public view {
+    function Owner() public view {
         require(msg.sender == owner, "Only the owner can call this function.");
     }
 
-    function onwerHere() public view {
+    function NotOwner() public view {
         if(msg.sender!= owner){
             revert("The caller is not the owner.");
         }
     }
 
-    function Owner() public view {
+    function Sender() public view {
         assert(msg.sender == owner);
     }
 }
